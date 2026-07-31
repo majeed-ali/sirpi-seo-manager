@@ -1,0 +1,252 @@
+﻿/* SIRPI SEO Manager - Admin Styles */
+
+.sirpi-seo-manager-metabox {
+    padding: 10px 0;
+}
+
+.sirpi-seo-manager-metabox .sirpi-seo-field {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.sirpi-seo-manager-metabox .sirpi-seo-field:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.sirpi-seo-manager-metabox label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #23282d;
+}
+
+.sirpi-seo-manager-metabox .description {
+    color: #666;
+    font-style: italic;
+    margin-top: 4px;
+    font-size: 12px;
+}
+
+.sirpi-seo-manager-metabox input[type="text"],
+.sirpi-seo-manager-metabox input[type="url"],
+.sirpi-seo-manager-metabox textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 13px;
+    line-height: 1.4;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.sirpi-seo-manager-metabox input[type="text"]:focus,
+.sirpi-seo-manager-metabox input[type="url"]:focus,
+.sirpi-seo-manager-metabox textarea:focus {
+    border-color: #007cba;
+    box-shadow: 0 0 0 1px #007cba;
+    outline: 2px solid transparent;
+}
+
+.sirpi-seo-manager-metabox textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.sirpi-seo-manager-metabox .sirpi-seo-checkboxes {
+    display: flex;
+    gap: 20px;
+    padding-top: 5px;
+}
+
+.sirpi-seo-manager-metabox .sirpi-seo-checkboxes label {
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.sirpi-seo-manager-metabox .sirpi-seo-checkboxes input[type="checkbox"] {
+    margin: 0;
+}
+
+/* Title preview */
+.sirpi-seo-preview {
+    background: #f0f6fc;
+    border: 1px solid #c5d9ed;
+    border-radius: 4px;
+    padding: 10px 12px;
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #333;
+    word-break: break-all;
+}
+
+.sirpi-seo-preview strong {
+    display: block;
+    margin-bottom: 3px;
+    color: #135e96;
+}
+
+/* Character count */
+#sirpi_desc_chars {
+    font-weight: 600;
+    color: #d63638;
+}
+
+#sirpi_desc_chars.valid {
+    color: #00a32a;
+}
+
+#sirpi_desc_chars.warning {
+    color: #dba617;
+}
+
+/* Image upload */
+.sirpi-seo-image-upload {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sirpi-seo-image-upload #sirpi_og_image_preview {
+    max-width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    background: #fafafa;
+}
+
+.sirpi-seo-image-upload #sirpi_og_image_preview img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.sirpi-seo-image-upload .button {
+    align-self: flex-start;
+}
+
+/* Settings page styles */
+.sirpi-seo-manager-settings .form-table th {
+    width: 250px;
+}
+
+.sirpi-seo-manager-settings .form-table td {
+    padding: 15px 10px;
+}
+
+.sirpi-seo-manager-settings select {
+    min-width: 100px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 782px) {
+    .sirpi-seo-manager-metabox .sirpi-seo-checkboxes {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .sirpi-seo-image-upload #sirpi_og_image_preview {
+        max-width: 100%;
+    }
+}
+
+/* Meta box tabs */
+.sirpi-seo-tabs {
+    margin-bottom: 15px;
+}
+
+.sirpi-seo-tab {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-right: 4px;
+    background: #f1f1f1;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    border-radius: 3px 3px 0 0;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    color: #555;
+    transition: all 0.15s ease;
+}
+
+.sirpi-seo-tab:hover {
+    background: #e5e5e5;
+    color: #23282d;
+}
+
+.sirpi-seo-tab.active {
+    background: #fff;
+    border-color: #007cba;
+    color: #007cba;
+    border-bottom: 1px solid #fff;
+    margin-bottom: -1px;
+}
+
+.sirpi-seo-tab-content {
+    display: none;
+    padding: 15px 0;
+}
+
+.sirpi-seo-tab-content.active {
+    display: block;
+}
+
+/* Readability analysis */
+.sirpi-seo-analysis {
+    background: #f8f9fa;
+    border: 1px solid #e2e4e7;
+    border-radius: 4px;
+    padding: 12px;
+    margin-top: 10px;
+}
+
+.sirpi-seo-analysis-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 6px 0;
+    font-size: 13px;
+}
+
+.sirpi-seo-analysis-item .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    margin-top: 1px;
+}
+
+.sirpi-seo-analysis-item.good .dashicons {
+    color: #00a32a;
+}
+
+.sirpi-seo-analysis-item.bad .dashicons {
+    color: #d63638;
+}
+
+.sirpi-seo-analysis-item.ok .dashicons {
+    color: #dba617;
+}
+
+/* Loading spinner */
+.sirpi-loading {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #f1f1f1;
+    border-top: 2px solid #007cba;
+    border-radius: 50%;
+    animation: sirpi-spin 0.6s linear infinite;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+@keyframes sirpi-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

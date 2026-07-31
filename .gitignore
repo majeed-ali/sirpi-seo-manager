@@ -1,0 +1,20 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+
+# Build artifacts
+*.zip
+*.tar.gz
+
+# Local config
+wp-config.php

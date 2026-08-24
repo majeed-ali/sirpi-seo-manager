@@ -16,5 +16,7 @@ desktop.ini
 *.zip
 *.tar.gz
 
-# Local config
+# Local config & Docker
 wp-config.php
+docker-compose.yml
+docker-compose*.yml

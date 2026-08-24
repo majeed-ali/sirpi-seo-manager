@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Sirpi SEO Manager
  * Description: A comprehensive SEO plugin for WordPress with meta tags, XML sitemaps, Open Graph, Twitter Cards, and breadcrumbs.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Abdul Majeed Ali
  * Author URI: https://sirpisoftwares.com
  * License: GPL v2 or later
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Define plugin constants.
-define( 'SIRPI_SEO_MANAGER_VERSION', '1.0.0' );
+define( 'SIRPI_SEO_MANAGER_VERSION', '1.0.1' );
 define( 'SIRPI_SEO_MANAGER_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'SIRPI_SEO_MANAGER_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'SIRPI_SEO_MANAGER_ICON', 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMjU2IDI1NiI+CiAgPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI5LjYuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDIuMS4xIEJ1aWxkIDkpICAtLT4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLnN0MCB7CiAgICAgICAgZmlsbDogdXJsKCNsaW5lYXItZ3JhZGllbnQpOwogICAgICB9CiAgICA8L3N0eWxlPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJsaW5lYXItZ3JhZGllbnQiIHgxPSI5LjQ4IiB5MT0iMTI4IiB4Mj0iMjQ2LjUyIiB5Mj0iMTI4IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2JmMGEwMCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZjc3MTUiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xNTYuODEsNDcuMDhjMTkuNDgsMCwzNy4xNSw3LjkzLDQ5Ljk2LDIwLjY4LDEyLjc5LDEyLjc5LDIwLjY4LDMwLjQyLDIwLjY4LDQ5Ljk0LDAsMTQuMjUtNC4yNCwyNy41Ni0xMS41LDM4LjY1bDMwLjU3LDMzLjMxLTIxLjA4LDE5LjI3LTI5LjUxLTMyLjQyYy0xMS4xOSw3LjQ2LTI0LjY3LDExLjgtMzkuMTIsMTEuOC0xNi4wOSwwLTMwLjk0LTUuNC00Mi44Mi0xNC40Ny03LjQxLDcuNDYtMTQuNDksMTQuNTYtMjAuNDUsMjAuNTJsLTQwLjk1LTQwLjQ1LTI4Ljc4LDI3Ljk1LTE0LjMzLTE0LjMzaDBsNDMuMzYtNDIuMTRjMTMuNTQsMTMuNTQsMjYuOTMsMjYuOTMsNDAuNiw0MC40M2w2LjM1LTYuNGMtOC41Ni0xMS42OS0xMy42LTI2LjA4LTEzLjYtNDEuNywwLTE5LjQ4LDcuOTMtMzcuMTUsMjAuNjgtNDkuOTQsMTIuNzktMTIuODMsMzAuNDItMjAuNyw0OS45NC0yMC43aDBaTTExMC42MywxNDguNDdsMjguMjItMjguNDktMTYuOC0xNi44LDQ3LjI2LS40MnY0Ny42OGwtMTYuMTQtMTYuMTRjLTguMSw4LjItMTguMywxOC41Mi0yOC42LDI4LjkxLDkuMTIsNi42NSwyMC4zOSwxMC42MSwzMi41NCwxMC42MSwxNS4yNiwwLDI5LjExLTYuMjEsMzkuMS0xNi4yMiwxMC4wMS0xMC4wMSwxNi4yMi0yMy44NCwxNi4yMi0zOS4xcy02LjIxLTI5LjExLTE2LjIyLTM5LjFoMGMtMTAuMDEtMTAuMDEtMjMuODQtMTYuMjItMzkuMS0xNi4yMnMtMjkuMTEsNi4yMS0zOS4xLDE2LjIyYy0xMC4wMSwxMC4wMS0xNi4yMiwyMy44NC0xNi4yMiwzOS4xLDAsMTEuMDMsMy4yNiwyMS4zMyw4Ljg1LDI5Ljk3aDBaIi8+Cjwvc3ZnPg==' );
@@ -88,7 +88,6 @@ class SIRPI_SEO_Manager {
         // Activation / Deactivation hooks.
         register_activation_hook( __FILE__, array( $this, 'activate' ) );
         register_deactivation_hook( __FILE__, array( $this, 'deactivate' ) );
-
     }
 
     /**
@@ -130,7 +129,9 @@ class SIRPI_SEO_Manager {
      * @param string $hook The current admin page hook.
      */
     public function enqueue_admin_assets( $hook ) {
-        if ( 'post.php' === $hook || 'post-new.php' === $hook || 'settings_page_sirpi-seo-manager' === $hook ) {
+        if ( 'post.php' === $hook || 'post-new.php' === $hook || 'settings_page_sirpi-seo-manager' === $hook || 'toplevel_page_sirpi-seo-manager' === $hook ) {
+            wp_enqueue_media();
+
             wp_enqueue_style(
                 'sirpi-seo-manager-admin',
                 SIRPI_SEO_MANAGER_PLUGIN_URL . 'assets/admin.css',
@@ -144,6 +145,16 @@ class SIRPI_SEO_Manager {
                 array( 'jquery' ),
                 SIRPI_SEO_MANAGER_VERSION,
                 true
+            );
+
+            wp_localize_script(
+                'sirpi-seo-manager-admin',
+                'sirpiAdmin',
+                array(
+                    'siteName'    => get_bloginfo( 'name' ),
+                    'mediaTitle'  => __( 'Select Image', 'sirpi-seo-manager' ),
+                    'mediaButton' => __( 'Use Image', 'sirpi-seo-manager' ),
+                )
             );
         }
     }
@@ -190,11 +201,11 @@ class SIRPI_SEO_Manager {
         );
 
         $fields = array(
-            'enable_meta_tags' => array(
+            'enable_meta_tags'     => array(
                 'title' => __( 'Enable Meta Tags', 'sirpi-seo-manager' ),
                 'type'  => 'checkbox',
             ),
-            'enable_open_graph' => array(
+            'enable_open_graph'    => array(
                 'title' => __( 'Enable Open Graph Tags', 'sirpi-seo-manager' ),
                 'type'  => 'checkbox',
             ),
@@ -202,26 +213,26 @@ class SIRPI_SEO_Manager {
                 'title' => __( 'Enable Twitter Cards', 'sirpi-seo-manager' ),
                 'type'  => 'checkbox',
             ),
-            'enable_sitemap' => array(
+            'enable_sitemap'       => array(
                 'title' => __( 'Enable XML Sitemap', 'sirpi-seo-manager' ),
                 'type'  => 'checkbox',
             ),
-            'enable_breadcrumbs' => array(
+            'enable_breadcrumbs'   => array(
                 'title' => __( 'Enable Breadcrumbs', 'sirpi-seo-manager' ),
                 'type'  => 'checkbox',
             ),
-            'home_title' => array(
+            'home_title'           => array(
                 'title' => __( 'Homepage Title', 'sirpi-seo-manager' ),
                 'type'  => 'text',
             ),
-            'home_description' => array(
+            'home_description'     => array(
                 'title' => __( 'Homepage Description', 'sirpi-seo-manager' ),
                 'type'  => 'textarea',
             ),
-            'separator' => array(
+            'separator'            => array(
                 'title'   => __( 'Title Separator', 'sirpi-seo-manager' ),
                 'type'    => 'select',
-                'options' => array( '|', '-', 'â€¢', '~', 'â€”', '>>' ),
+                'options' => array( '|', '-', '•', '~', '—', '»' ),
             ),
         );
 
@@ -311,7 +322,7 @@ class SIRPI_SEO_Manager {
         $sanitized['home_description']     = isset( $input['home_description'] ) ? sanitize_textarea_field( $input['home_description'] ) : '';
         $sanitized['meta_keywords']        = isset( $input['meta_keywords'] ) ? sanitize_text_field( $input['meta_keywords'] ) : '';
 
-        $allowed_separators = array( '|', '-', 'â€¢', '~', 'â€”', '>>' );
+        $allowed_separators     = array( '|', '-', '•', '~', '—', '»' );
         $sanitized['separator'] = isset( $input['separator'] ) && in_array( $input['separator'], $allowed_separators, true ) ? $input['separator'] : '|';
 
         $sanitized['google_verify']  = isset( $input['google_verify'] ) ? sanitize_text_field( $input['google_verify'] ) : '';
@@ -353,11 +364,11 @@ class SIRPI_SEO_Manager {
     public function render_seo_column( $column, $post_id ) {
         if ( 'sirpi_meta_title' === $column ) {
             $meta_title = get_post_meta( $post_id, '_sirpi_meta_title', true );
-            echo esc_html( $meta_title ) ?: '&mdash;';
+            echo ! empty( $meta_title ) ? esc_html( $meta_title ) : '&mdash;';
         }
         if ( 'sirpi_meta_description' === $column ) {
             $meta_desc = get_post_meta( $post_id, '_sirpi_meta_description', true );
-            echo esc_html( $meta_desc ) ?: '&mdash;';
+            echo ! empty( $meta_desc ) ? esc_html( $meta_desc ) : '&mdash;';
         }
     }
 
@@ -486,7 +497,7 @@ class SIRPI_SEO_Manager {
      */
     public function save_seo_meta_data( $post_id ) {
         // Verify nonce.
-        if ( ! isset( $_POST['sirpi_seo_manager_meta_nonce'] ) || ! wp_verify_nonce( wp_unslash( $_POST['sirpi_seo_manager_meta_nonce'] ), 'sirpi_seo_manager_meta_nonce' ) ) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+        if ( ! isset( $_POST['sirpi_seo_manager_meta_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['sirpi_seo_manager_meta_nonce'] ) ), 'sirpi_seo_manager_meta_nonce' ) ) {
             return;
         }
 
@@ -505,7 +516,7 @@ class SIRPI_SEO_Manager {
             '_sirpi_meta_title'       => isset( $_POST['sirpi_meta_title'] ) ? sanitize_text_field( wp_unslash( $_POST['sirpi_meta_title'] ) ) : '',
             '_sirpi_meta_description' => isset( $_POST['sirpi_meta_description'] ) ? sanitize_textarea_field( wp_unslash( $_POST['sirpi_meta_description'] ) ) : '',
             '_sirpi_focus_keyword'    => isset( $_POST['sirpi_focus_keyword'] ) ? sanitize_text_field( wp_unslash( $_POST['sirpi_focus_keyword'] ) ) : '',
-            '_sirpi_og_image_id'      => isset( $_POST['sirpi_og_image_id'] ) ? intval( wp_unslash( $_POST['sirpi_og_image_id'] ) ) : '',
+            '_sirpi_og_image_id'      => isset( $_POST['sirpi_og_image_id'] ) ? absint( wp_unslash( $_POST['sirpi_og_image_id'] ) ) : '',
             '_sirpi_canonical_url'    => isset( $_POST['sirpi_canonical_url'] ) ? esc_url_raw( wp_unslash( $_POST['sirpi_canonical_url'] ) ) : '',
             '_sirpi_noindex'          => isset( $_POST['sirpi_noindex'] ) ? 1 : 0,
             '_sirpi_nofollow'         => isset( $_POST['sirpi_nofollow'] ) ? 1 : 0,
@@ -825,21 +836,21 @@ class SIRPI_SEO_Manager {
      * Initialize sitemap rewrite rules.
      */
     public function init_sitemap() {
-        // Main sitemap: /sitemap.xml
+        // Main sitemap: /sitemap.xml.
         add_rewrite_rule(
             'sitemap\.xml$',
             'index.php?sirpi_sitemap=1&sirpi_sitemap_type=main',
             'top'
         );
 
-        // Sitemap index: /sitemap-index.xml
+        // Sitemap index: /sitemap-index.xml.
         add_rewrite_rule(
             'sitemap-index\.xml$',
             'index.php?sirpi_sitemap=1&sirpi_sitemap_type=index',
             'top'
         );
 
-        // Individual sitemaps: /sitemap-{post_type}.xml or /sitemap-{taxonomy}.xml
+        // Individual sitemaps: /sitemap-{post_type}.xml or /sitemap-{taxonomy}.xml.
         add_rewrite_rule(
             'sitemap-([a-z0-9_-]+)\.xml$',
             'index.php?sirpi_sitemap=1&sirpi_sitemap_type=$matches[1]',
@@ -918,10 +929,12 @@ class SIRPI_SEO_Manager {
             // Add taxonomy sitemaps.
             $taxonomies = get_taxonomies( array( 'public' => true ), 'names' );
             foreach ( $taxonomies as $taxonomy ) {
-                $terms = get_terms( array(
-                    'taxonomy'   => $taxonomy,
-                    'hide_empty' => true,
-                ) );
+                $terms = get_terms(
+                    array(
+                        'taxonomy'   => $taxonomy,
+                        'hide_empty' => true,
+                    )
+                );
 
                 if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
                     echo "\t<sitemap>\n";
@@ -952,13 +965,15 @@ class SIRPI_SEO_Manager {
             $posts_per_page = 1000;
 
             while ( true ) {
-                $posts = get_posts( array(
-                    'post_type'      => $all_post_types,
-                    'post_status'    => 'publish',
-                    'posts_per_page' => $posts_per_page,
-                    'paged'          => $paged,
-                    'fields'         => 'ids',
-                ) );
+                $posts = get_posts(
+                    array(
+                        'post_type'      => $all_post_types,
+                        'post_status'    => 'publish',
+                        'posts_per_page' => $posts_per_page,
+                        'paged'          => $paged,
+                        'fields'         => 'ids',
+                    )
+                );
 
                 if ( empty( $posts ) ) {
                     break;
@@ -974,7 +989,7 @@ class SIRPI_SEO_Manager {
                     echo "\t</url>\n";
                 }
 
-                $paged++;
+                ++$paged;
             }
 
             echo '</urlset>';
@@ -989,13 +1004,15 @@ class SIRPI_SEO_Manager {
             $posts_per_page = 1000;
 
             while ( true ) {
-                $posts = get_posts( array(
-                    'post_type'      => $sitemap_type,
-                    'post_status'    => 'publish',
-                    'posts_per_page' => $posts_per_page,
-                    'paged'          => $paged,
-                    'fields'         => 'ids',
-                ) );
+                $posts = get_posts(
+                    array(
+                        'post_type'      => $sitemap_type,
+                        'post_status'    => 'publish',
+                        'posts_per_page' => $posts_per_page,
+                        'paged'          => $paged,
+                        'fields'         => 'ids',
+                    )
+                );
 
                 if ( empty( $posts ) ) {
                     break;
@@ -1011,7 +1028,7 @@ class SIRPI_SEO_Manager {
                     echo "\t</url>\n";
                 }
 
-                $paged++;
+                ++$paged;
             }
 
             echo '</urlset>';
@@ -1023,11 +1040,13 @@ class SIRPI_SEO_Manager {
         if ( in_array( $sitemap_type, $taxonomies, true ) ) {
             echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
 
-            $terms = get_terms( array(
-                'taxonomy'   => $sitemap_type,
-                'hide_empty' => true,
-                'fields'     => 'ids',
-            ) );
+            $terms = get_terms(
+                array(
+                    'taxonomy'   => $sitemap_type,
+                    'hide_empty' => true,
+                    'fields'     => 'ids',
+                )
+            );
 
             if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
                 foreach ( $terms as $term_id ) {
@@ -1138,13 +1157,15 @@ class SIRPI_SEO_Manager {
 
 /**
  * Initialize the plugin.
+ *
+ * @return SIRPI_SEO_Manager
  */
-function SIRPI_SEO_Manager_init() {
+function sirpi_seo_manager_init() {
     return SIRPI_SEO_Manager::get_instance();
 }
 
 // Start the plugin.
-SIRPI_SEO_Manager_init();
+sirpi_seo_manager_init();
 
 /**
  * Template tag: Display breadcrumbs.
@@ -1156,6 +1177,8 @@ function sirpi_breadcrumbs() {
 
 /**
  * Template tag: Get the current page title.
+ *
+ * @return string
  */
 function sirpi_title() {
     $plugin = SIRPI_SEO_Manager::get_instance();
@@ -1164,6 +1187,8 @@ function sirpi_title() {
 
 /**
  * Template tag: Get the current meta description.
+ *
+ * @return string
  */
 function sirpi_description() {
     $plugin = SIRPI_SEO_Manager::get_instance();
@@ -1172,8 +1197,12 @@ function sirpi_description() {
 
 /**
  * Template tag: Get the focus keyword.
+ *
+ * @param int $post_id Optional. Post ID. Default 0.
+ * @return string|false
  */
 function sirpi_focus_keyword( $post_id = 0 ) {
     $plugin = SIRPI_SEO_Manager::get_instance();
     return esc_html( $plugin->get_focus_keyword( $post_id ) );
 }
+

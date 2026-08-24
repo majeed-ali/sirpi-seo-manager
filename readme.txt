@@ -1,11 +1,11 @@
-﻿=== Sirpi SEO Manager ===
+=== Sirpi SEO Manager ===
 Contributors: amajeedali0
 Donate link: https://sirpisoftwares.com
 Tags: seo, meta tags, open graph, xml sitemap, breadcrumbs
 Requires at least: 5.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -65,6 +65,10 @@ The XML sitemap is automatically generated and accessible at `/sitemap.xml` on y
 2. SEO meta box on the post edit screen.
 
 == Changelog ==
+
+= 1.0.1 =
+* Security enhancement: Proper sanitization of nonces before verification.
+* Codebase validation against WordPress Coding Standards and Plugin Check.
 
 = 1.0.0 =
 * Initial release.

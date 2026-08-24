@@ -63,9 +63,14 @@ We recommend using Sirpi SEO Manager as your only SEO plugin. Using multiple SEO
 
 ## Changelog
 
+### 1.0.1
+- Security enhancement: Proper sanitization of nonces before verification.
+- Codebase validation against WordPress Coding Standards and Plugin Check.
+
 ### 1.0.0
 - Initial release with meta tags, XML sitemaps, Open Graph, Twitter Cards, and breadcrumbs.
 
 ## License
 
 GPLv2 or later. See [LICENSE](COPYING) for details.
+
